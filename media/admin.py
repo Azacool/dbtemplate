@@ -1,5 +1,9 @@
 from django.contrib import admin
-from .models import Portfolio
+from .models import Post
 
-admin.site.register(Portfolio)
-
+@admin.register(Post)
+class PostAdmin(admin.ModelAdmin):
+    list_display = ['owner','text','image']
+    list_filter = ['owner']
+    ordering = ['owner']
+    

@@ -1,6 +1,14 @@
 from django.shortcuts import render
-from .models import Portfolio
+from .models import Post
 
 def main(request):
-    portfolio = Portfolio.objects.all()
-    return render(request=request,template_name='index.html',context={'portfolio':portfolio})
+    posts = Post.objects.all()
+    for post in posts:
+        print(post.image)
+    return render(request=request,template_name='index.html',context={'posts':posts})
+
+def detail(request,pk):
+    post = Post.objects.get(id=pk)
+    return 
+
+ 

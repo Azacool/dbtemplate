@@ -1,6 +1,7 @@
 from django.urls import path
-from .views import main
+from .views import main,detail
 
 urlpatterns = [
-    path('',main)
+    path('',main),
+    path('detaitl/<str:pk>',detail)
 ]
